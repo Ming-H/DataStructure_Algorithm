@@ -47,3 +47,6 @@ if  __name__ == "__main__":
     printLcs(flag,a,len(a),len(b))
     print('')
 
+    
+    
+# 参考文献：https://www.cnblogs.com/zfyouxi/p/4195215.html
