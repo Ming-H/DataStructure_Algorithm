@@ -16,12 +16,10 @@ def maxProduct(nums):
     #temp记录整个数组的子序列最大连乘积
     temp = nums[0]
     length = len(nums)
-    
     #M数组记录包含当前位置的最大连乘值
     M = [0 for i in range(length)]
     #m数组记录包含当前位置的最小连乘值
     m = [0 for i in range(length)]
-    
     for i in range(length):
         if i == 0:
             M[i] = nums[i]
@@ -30,7 +28,6 @@ def maxProduct(nums):
             #包含当前位置的最大连乘值从：当前位置和到第i-1个元素的最大连乘值的乘积、当前元素中选出
             M[i] = max(max(M[i-1]*nums[i], m[i-1]*nums[i]), nums[i])
             m[i] = min(min(M[i-1]*nums[i], m[i-1]*nums[i]), nums[i])
-            
         temp = max(temp,M[i])
         
     return temp
