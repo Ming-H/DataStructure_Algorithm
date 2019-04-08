@@ -1,10 +1,4 @@
-def quicksort(num ,low ,high):  #快速排序
-    if low< high:
-        location = partition(num, low, high)
-        quicksort(num, low, location - 1)
-        quicksort(num, location + 1, high)
-    return num
- 
+
 def partition(num, low, high):
     pivot = num[low]
     while (low < high):
@@ -17,6 +11,13 @@ def partition(num, low, high):
         num[high] = temp
     num[low] = pivot
     return low
+
+def quicksort(num ,low ,high):  #快速排序
+    if low< high:
+        location = partition(num, low, high)
+        quicksort(num, low, location - 1)
+        quicksort(num, location + 1, high)
+    return num
  
 def findkth(num,low,high,k):   #找到数组里第k个数
         index=partition(num,low,high)
