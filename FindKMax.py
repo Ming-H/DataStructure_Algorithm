@@ -1,14 +1,11 @@
-
-def partition(num, low, high):
+def partitions(num, low, high):
     pivot = num[low]
-    while (low < high):
-        while (low < high and num[high] > pivot):
+    while low < high:
+        while low<high and num[high]>pivot:
             high -= 1
-        while (low < high and num[low] < pivot):
+        while low<high and num[low]<pivot:
             low += 1
-        temp = num[low]
-        num[low] = num[high]
-        num[high] = temp
+        num[low], num[high] = num[high], num[low]
     num[low] = pivot
     return low
 
