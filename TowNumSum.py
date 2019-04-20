@@ -1,11 +1,10 @@
-def twoSum(nums, target):
+def towSum(L, target):
     d = {}
-    for x in range(len(nums)):
-        a = target - nums[x]
-        if nums[x] in d:
-            return d[nums[x]], x
+    for i in range(len(L)):
+        if L[i] not in d:
+            d[target - L[i]] = i 
         else:
-            d[a] = x
+            return d[L[i]], i
             
-L = [1,2,3,4,5,6]
-func(L, 9)
+L = [1,3,5,6]
+print(towSum(L, 7))
