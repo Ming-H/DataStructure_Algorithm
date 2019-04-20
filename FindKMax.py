@@ -17,14 +17,13 @@ def quickSort(num, low, high):
     return num
 
 def findkth(num, low, high, k):
-    if low<high:
-        index = partition(num, low, high)
-        if index == k:
-            return num[index]
-        elif index < k:
-            return findkth(num, index+1, high, k)
-        else:
-            return findkth(num, low, index-1, k)
+    index = partition(num, low, high)
+    if index == k:
+        return num[index]
+    elif index < k:
+        return findkth(num, index+1, high, k)
+    else:
+        return findkth(num, low, index-1, k)
 “”“
 这个算法的算法复杂度是O(N)。
 第一次交换，算法复杂度为O(N)，接下来的过程和快速排序不同，快速排序是要继续处理两边的数据，
