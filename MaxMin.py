@@ -26,7 +26,19 @@ def maxmin(l, low, high):
             return [right_list[0], right_list[1]]
         else:
             return [right_list[0], left_list[1]]
- 
+        
+def maxmin(l, low, high):
+    if high - low <= 1:
+        return max(l[low], l[high]), min(l[low], l[high])
+    
+    mid = (low + high) // 2
+    left_list = maxmin(l, low, mid)
+    right_list = maxmin(l, mid + 1, high)
+    if left_list[0] > right_list[0]:
+        return left_list[0], min(left_list[1], right_list[1])
+    else:
+        return right_list[0], min(left_list[1], right_list[1]) 
+
 if __name__ == "__main__":
     test_list = [1, 5, 7, 15, 8, 6, 4, 2, 0, 20]
     num = maxmin(test_list, 0, len(test_list) - 1)
