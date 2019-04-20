@@ -11,10 +11,9 @@ dp[i,j]=max(dp[i+1,j],dp[i,j−1])|s[i]!=s[j]
 
 
 def longestPalindrome(s):
-    n = len(s)
     maxl = 0
     start = 0
-    for i in range(n):
+    for i in range(len(s)):
         if i - maxl >= 1 and s[i-maxl-1: i+1] == s[i-maxl-1: i+1][::-1]:
             start = i - maxl - 1
             maxl += 2
