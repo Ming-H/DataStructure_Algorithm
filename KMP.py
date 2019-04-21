@@ -30,23 +30,26 @@ def gen_pnext(p):
             k = pnext[k]                # 遇到更短相同前缀
     return pnext
     
-def strStr(haystack, needle):
-    if needle == "":
+def strStr(T, P):
+    if P == "":
         return 0
-    for i in range(len(haystack)-len(needle)+1):
-        for j in range(len(needle)):
-            if haystack[i+j] != needle[j]:
+    for i in range(len(T)-len(P)+1):
+        for j in range(len(P)):
+            if T[i+j] != P[j]:
                 break
-            if j == len(needle)-1:
+            if j == len(P)-1:
                 return i
     return -1
+
+
     
 if __name__ == "__main__":
     T = "BBC ABCDAB ABCDABCDABDE"
     P = "ABCDABCD"
-    # pnext = gen_pnext(P)
+    pnext = gen_pnext(P)
     print(pnext)
     match_kmp(T, P, pnext)
+    print(strStr(T, P))
 
 
             
