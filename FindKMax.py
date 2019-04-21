@@ -41,3 +41,4 @@ print(quicksort(pai, 0, len(pai)-1))
 print(findkth(pai,0,len(pai)-1,3))
 
 # https://blog.csdn.net/wenqiwenqi123/article/details/81669899
+# https://blog.csdn.net/cbjcry/article/details/84917432
