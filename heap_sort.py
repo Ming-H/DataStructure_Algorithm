@@ -27,13 +27,13 @@ def heap_adjust(L, start, end):
 def heap_sort(L):
     L_length = len(L) - 1
 
-    first_sort_count = int(L_length / 2)
+    first_sort_count = L_length // 2
     for i in range(first_sort_count):
         heap_adjust(L, first_sort_count - i, L_length)
 
     for i in range(L_length - 1):
         L = swap_param(L, 1, L_length - i)
-        heap_adjust(L, 1, L_length - i - 1)
+        heap_adjust(L, 1, L_length - 1 - i)
 
     return [L[i] for i in range(1, len(L))]
 
