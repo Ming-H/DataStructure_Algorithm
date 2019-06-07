@@ -21,7 +21,7 @@ if __name__ == '__main__':
     v = [0,60,100,120]
     w = [0,10,20,30]
     weight = 50
-    n = 3
+    n = 3 #3种重量、价值不同的物品
     print(solve_unique(v,w,weight,n))
     print(solve_total(v,w,weight,n))
     
