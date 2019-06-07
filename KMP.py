@@ -55,6 +55,7 @@ if __name__ == "__main__":
             
 
 参考文献：https://www.cnblogs.com/zlsgh/p/9537793.html
+　kmp 算法的时间复杂度是 O(m+n)
 注：原文代码有误
             
             
