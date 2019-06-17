@@ -37,3 +37,4 @@ print(normal_leven('ofailing','osailn'))
 
 # 参考文献：https://www.jianshu.com/p/466cf6624e26
 # https://blog.csdn.net/u010897775/article/details/40018889
+# https://www.cnblogs.com/zuoyuan/p/3773134.html
