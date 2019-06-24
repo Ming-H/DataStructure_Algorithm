@@ -1,3 +1,23 @@
+def qselect(A,k): 
+  if len(A)<k:return A 
+  pivot = A[-1] 
+  right = [pivot] + [x for x in A[:-1] if x>=pivot] 
+  rlen = len(right) 
+  if rlen==k: 
+      return right 
+  if rlen>k: 
+      return qselect(right, k) 
+  else: 
+      left = [x for x in A[:-1] if x<pivot] 
+      return qselect(left, k-rlen) + right 
+  
+print(qselect([11,8,4,1,5,2,7,9], 5))
+
+#https://www.jb51.net/article/86764.htm
+
+
+
+
 """
 可以利用数据结构的最小堆来处理该问题。
 对于每个非叶子节点的数值，一定不大于孩子节点的数值。这样可用含有K个
