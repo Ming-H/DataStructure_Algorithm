@@ -57,6 +57,29 @@ def insert_sort(L):
 将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，
 算法适用于少量数据的排序
 """   
+
+def partition(num, low, high):
+    pivot = num[low]
+    while low<high:
+        while low<high and num[high]>pivot:
+            high -= 1
+        while low<high and num[low]<pivot:
+            low += 1
+        num[low], num[high] = num[high],num[low]
+    num[low] = pivot
+    return low
+
+def quickSort(num, low, high):
+    if low<high:
+        index = partition(num, low, high)
+        quickSort(num, low, index-1)
+        quickSort(num, index+1, high)
+    return num
+
+arr = [ 12, 11, 13, 5, 6, 7] 
+quickSort(arr, 0, len(arr)-1) 
+
+
 def quick_sort(myList, start, end):
     if start < end:
         i,j = start,end
